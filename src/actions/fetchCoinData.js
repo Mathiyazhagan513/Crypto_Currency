@@ -1,5 +1,5 @@
-import axios from 'axios'
-import { apiBaseURL } from '../utils/constants'
+import axios from 'axios';
+import { apiBaseURL } from '../utils/constants';
 import { FETCH_COIN_DATA, FETCH_COIN_DATA_SUCCESS, FETCH_COIN_DATA_FAIL } from '../utils/actionTypes';
 
 export default function fetchCoinData() {

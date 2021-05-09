@@ -51,7 +51,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { fetchCoinData })(GlobalDetail)
+export default connect(mapStateToProps, { fetchCoinData })(GlobalDetail);
 
 
 const styles = {

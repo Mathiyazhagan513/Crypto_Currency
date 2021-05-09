@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
-import { images} from './CoinIcon'
+import React, { Component } from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import { images} from './CoinIcon';
 
 const CoinCard = ({ symbol, name, priceUsd, changePercent24Hr}) => {
   return (
@@ -18,7 +18,7 @@ const CoinCard = ({ symbol, name, priceUsd, changePercent24Hr}) => {
   )
 }
 
-export default CoinCard
+export default CoinCard;
 
 const styles =  StyleSheet.create({
   container: {
