@@ -17,7 +17,7 @@ class GlobalDetail extends Component {
       return (
         <GlobalDetail
           key={index}
-          changePercent24Hr={coin.changePercent24Hr}
+          marketCapUsd={coin.marketCapUsd}
         />
       )
     })
