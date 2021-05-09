@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
-
 import { images} from './CoinIcon'
 
-const CoinCard = ({ symbol, coin_name, price_usd, percent_change_24h}) => {
+const CoinCard = ({ symbol, name, priceUsd, changePercent24Hr}) => {
   return (
     <View style={styles.container} >
         <Image
           source={{uri: images[symbol]}}
           style={styles.image}
           />
-        <Text style={styles.name}>{coin_name}</Text>
+        <Text style={styles.name}>{name}</Text>
         <Text style={styles.bold} >$
-          <Text style={styles.price} >{price_usd}</Text>
+          <Text style={styles.price} >{priceUsd}</Text>
         </Text>
-        <Text style={percent_change_24h < 0 ? styles.percentNeg : styles.percentPos} > {percent_change_24h}</Text>
+        <Text style={percent_change_24h < 0 ? styles.percentNeg : styles.percentPos} > {changePercent24Hr}</Text>
     </View>
   )
 }
@@ -30,8 +29,9 @@ const styles =  StyleSheet.create({
     padding: 20,
   },
   image: {
-    height: 40,
-    width: 40
+    height: 20,
+    width: 20,
+    borderRadius: 500
   },
   name: {
     marginTop: 10,

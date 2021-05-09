@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import Spinner from 'react-native-loading-spinner-overlay';
 import fetchCoinData from '../actions/fetchCoinData';
-import CoinCard from './CoinCard';
+import GlobalDetail from '../components/GlobalDetail';
 
-class CryptoContainer extends Component {
-  componentWillMount() {
-    this.props.fetchCoinData()
+class GlobalDetail extends Component {
+  componentDidMount() {
+    this.props.fetchCoinData();
   }
 
   renderCoinCard() {
@@ -15,17 +15,13 @@ class CryptoContainer extends Component {
     return this.props.crypto.data.map((coin, index) => {
       console.log(coin)
       return (
-        <CoinCard
+        <GlobalDetail
           key={index}
-          name={coin.name}
-          symbol={coin.symbol}
-          price_usd={coin.priceUsd}
-          percent_change_24h={coin.changePercent24Hr}
+          changePercent24Hr={coin.changePercent24Hr}
         />
       )
     })
   }
-
   render() {
     console.log('this2', this.props.crypto.isFetching)
     if(this.props.crypto.isFetching) {
@@ -55,11 +51,11 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { fetchCoinData })(CryptoContainer)
+export default connect(mapStateToProps, { fetchCoinData })(GlobalDetail)
 
 
 const styles = {
   container: {
-    marginBottom: 50
+    marginBottom: 5
   }
 }
