@@ -7,7 +7,11 @@ import CoinCard from './CoinCard';
 
 class CryptoContainer extends Component {
   componentWillMount() {
-    this.props.fetchCoinData()
+    // this.props.fetchCoinData()
+  }
+  componentDidMount(){
+    console.log('in cryptocontainer',this.props.crypto)
+    alert(this.props.crypto.errorMessage)
   }
 
   renderCoinCard() {
@@ -19,8 +23,8 @@ class CryptoContainer extends Component {
           key={index}
           name={coin.name}
           symbol={coin.symbol}
-          price_usd={coin.priceUsd}
-          percent_change_24h={coin.changePercent24Hr}
+          priceUsd={coin.priceUsd}
+          changePercent24Hr={coin.changePercent24Hr}
         />
       )
     })

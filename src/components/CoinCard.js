@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { images} from './CoinIcon';
+// import { images} from './CoinIcon';
 
 const CoinCard = ({ symbol, name, priceUsd, changePercent24Hr}) => {
   return (
     <View style={styles.container} >
-        <Image
+        {/* <Image
           source={{uri: images[symbol]}}
           style={styles.image}
-          />
+          /> */}
+        <Text style={styles.circle}>{symbol}</Text>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.bold} >$
           <Text style={styles.price} >{priceUsd}</Text>
         </Text>
-        <Text style={percent_change_24h < 0 ? styles.percentNeg : styles.percentPos} > {changePercent24Hr}</Text>
+        <Text style={changePercent24Hr < 0 ? styles.percentNeg : styles.percentPos} > {changePercent24Hr}</Text>
     </View>
   )
 }
@@ -23,18 +24,29 @@ export default CoinCard;
 const styles =  StyleSheet.create({
   container: {
     display: 'flex',
-    marginBottom: 20,
-    borderBottomColor: '#e5e5e5',
-    borderBottomWidth: 3,
-    padding: 20,
+    flexDirection:'row',
+    marginBottom: 0,
+    borderTopColor: '#e5e5e5',
+    borderTopWidth: 2,
+    padding: 10,
   },
   image: {
     height: 20,
     width: 20,
     borderRadius: 500
   },
+  circle:{
+    borderWidth:1,
+    borderColor:'rgba(0,0,0,0.2)',
+    alignItems:'center',
+    justifyContent:'center',
+    width:40,
+    height:40,
+    backgroundColor:'#fff',
+    borderRadius:50,
+  },
   name: {
-    marginTop: 10,
+    marginTop: 0,
     marginRight: 20,
     marginLeft: 5,
   },

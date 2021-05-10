@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Provider } from 'react-redux';
 import  Header from './src/components/Header';
 import store from './src/components/store';
-import GlobalContainer from './src/components/GlobalDetail';
-import GlobalContainer from './src/components/GlobalContainer';
+import CryptoContainer from './src/components/CryptoContainer';
+// import GlobalContainer from './src/components/GlobalContainer';
 
 export default class App extends React.Component {
   render() {
@@ -12,7 +12,7 @@ export default class App extends React.Component {
       <Provider store={store} >
         <View>
           <Header />
-          <GlobalContainer/>
+          {/* <GlobalContainer/> */}
           <CryptoContainer />
         </View>
       </Provider>
